@@ -72,6 +72,8 @@ function HomeContent() {
               <span style={{ whiteSpace: "nowrap" }}>Web App Developer</span>
             </Typography>
             <Typography>button for resume</Typography>
+            <div class="circle"></div>
+
           </Grid>
         </Grid>
         <div

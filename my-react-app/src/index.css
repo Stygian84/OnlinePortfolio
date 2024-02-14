@@ -48,6 +48,18 @@ code {
   overflow-y: scroll;
   color: whitesmoke;
 }
+.circle {
+  position: absolute;
+  top: 25vh;
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 64px; 
+  height: 64px; 
+  border-radius: 50%; 
+  background-color: white; 
+}
+
+
 .top div div {
   text-align: center;
 }
