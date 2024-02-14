@@ -14,7 +14,16 @@ root.render(
     <BrowserRouter>
       <div id="wrapper" className="wrapper">
         <Top />
-        <Divider className="divider" variant="middle" />
+        <Divider
+          sx={{
+            borderColor: "#404040",
+            "&::before, &::after": {
+              bgcolor: "#404040",
+            },
+          }}
+          className="divider"
+          variant="middle"
+        />
         <Content />
       </div>
     </BrowserRouter>

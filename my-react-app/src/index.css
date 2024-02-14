@@ -4,11 +4,11 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Montserrat";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: black;
-  background: #f6f6f6;
+  color: whitesmoke;
+  background: #191919;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -27,31 +27,38 @@ code {
   overflow: hidden;
 }
 .divider {
-  background: #f6f6f6;
+  background: #191919;
 }
 .top {
   grid-area: top;
   position: relative;
   z-index: 1;
   padding-top: 2.5vh;
-  padding-right:5vw;
-
-  background: transparent;
+  padding-right: 5vw;
+  background: #191919;
 }
 .content {
   position: relative;
   grid-area: content;
-  background-color: #f6f6f6;
+  background-color: #131313;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  color: whitesmoke;
 }
-
+.top div div {
+  text-align: center;
+}
+/* Overlay */
+.top div div:hover,
+.top div div:active,
+.top div div:target {
+  /* filter: brightness(70%); */
+  color: white;
+}
 /* Hide the scrollbar */
 ::-webkit-scrollbar {
   display: none;
 }
-
-
