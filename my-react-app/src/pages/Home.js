@@ -1,6 +1,9 @@
 import { Grid, Stack, Typography } from "@mui/material";
+
+import React, { useRef, useState, useEffect } from "react";
 import "../index.css";
 import { Divider } from "@mui/material";
+import useInViewport from "../utils/useInViewPort";
 import Box from "@mui/system/Box";
 
 function HomeTop() {
@@ -25,6 +28,20 @@ function HomeTop() {
 }
 
 function HomeContent() {
+  const rowItems = [
+    // Define your row items here
+    [
+      { image: require("../images/react.png"), label: "React" },
+      { image: require("../images/javascript.png"), label: "JavaScript" },
+      { image: require("../images/html5.png"), label: "HTML5" },
+    ],
+    [
+      { image: require("../images/nodejs.png"), label: "NodeJS" },
+      { image: require("../images/expressjs.png"), label: "ExpressJS" },
+      { image: require("../images/jquery.png"), label: "JQuery" },
+    ],
+  ];
+
   const bgLink =
     "https://png.pngtree.com/background/20211215/original/pngtree-binary-matrix-code-flow-dark-abstract-background-picture-image_1466835.jpg";
   return (
@@ -176,45 +193,49 @@ function HomeContent() {
               Tech Stack
             </Typography>
           </Divider>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
-              flexWrap: "wrap",
-              margin: "7.5vh",
-            }}
-          >
-            {/* Row 1 */}
-            <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
-              <div>React</div>
-              <div>JS</div>
-              <div>HTML5</div>
+          <div class="tech-stack-row-container">
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/react.png")} alt="Logo" /> <Typography variant="h5">React</Typography>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
-              <div>NodeJS</div>
-              <div>Express</div>
-              <div>fads</div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/javascript.png")} alt="Logo" /> <Typography variant="h5">Js</Typography>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
-              <div>PostgreSQL</div>
-              <div>Python</div>
-              <div>Java</div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/html5.png")} alt="Logo" /> <Typography variant="h5">HTML5</Typography>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
-              <div>C#</div>
-              <div>fdas</div>
-              <div>fads</div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/nodejs.png")} alt="Logo" /> <Typography variant="h5">NodeJS</Typography>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
-              <div>C</div>
-              <div>Go</div>
-              <div>MongoDB</div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/expressjs.png")} alt="Logo" />{" "}
+              <Typography variant="h5">ExpressJS</Typography>
             </div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/jquery.png")} alt="Logo" /> <Typography variant="h5">JQuery</Typography>
+            </div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/postgres.png")} alt="Logo" />{" "}
+              <Typography variant="h5">PostgresSQL</Typography>
+            </div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/python.png")} alt="Logo" /> <Typography variant="h5">Python</Typography>
+            </div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/java.png")} alt="Logo" /> <Typography variant="h5">Java</Typography>
+            </div>
+            <div class="tech-stack-row-item animate-row">
+              <img src={require("../images/csharp.png")} alt="Logo" /> <Typography variant="h5">C#</Typography>
+            </div>
+            <div>fdas</div>
+            <div>fads</div>
+            <div>C</div>
+            <div>Go</div>
+            <div>MongoDB</div>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
 export { HomeTop, HomeContent };

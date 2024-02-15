@@ -51,14 +51,38 @@ code {
 .circle {
   position: absolute;
   top: 25vh;
-  left: 50%; 
-  transform: translateX(-50%); 
-  width: 64px; 
-  height: 64px; 
-  border-radius: 50%; 
-  background-color: white; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: white;
+}
+.tech-stack-row-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5vh;
+  margin: 7.5vh auto;
+  max-width: 80%;
 }
 
+.tech-stack-row-item {
+  display: flex;
+  align-items: center;
+  padding-left: 5vh;
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+.tech-stack-row-item img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+.tech-stack-row-item h5 {
+  margin: 0;
+}
 
 .top div div {
   text-align: center;
@@ -69,10 +93,37 @@ code {
 .top div div:target {
   /* filter: brightness(70%); */
   color: white;
-  text-shadow: 2px 2px 4px rgba(255,255,255, 0.5);
-
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
 /* Hide the scrollbar */
 ::-webkit-scrollbar {
   display: none;
+}
+
+/* Add animation keyframes */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Alternate animation direction for odd rows */
+.tech-stack-row:nth-child(odd) .tech-stack-row-item {
+  animation-name: slideInFromRight;
 }
