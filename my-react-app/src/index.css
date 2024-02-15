@@ -63,12 +63,14 @@ code {
 .top div div {
   text-align: center;
 }
-/* Overlay */
+/* Overlay on Hover*/
 .top div div:hover,
 .top div div:active,
 .top div div:target {
   /* filter: brightness(70%); */
   color: white;
+  text-shadow: 2px 2px 4px rgba(255,255,255, 0.5);
+
 }
 /* Hide the scrollbar */
 ::-webkit-scrollbar {

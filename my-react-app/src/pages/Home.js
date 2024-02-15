@@ -64,7 +64,12 @@ function HomeContent() {
             }}
           >
             <div>insert my pic</div>
-            <Typography variant="h3" fontWeight="bold" color="#00FF7F">
+            <Typography
+              variant="h3"
+              fontWeight="bold"
+              color="#00FF7F"
+              sx={{ textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
+            >
               Nicholas Gandhi
             </Typography>
             <Typography variant="h6" fontWeight="bold" sx={{ textAlign: "center" }}>
@@ -73,15 +78,15 @@ function HomeContent() {
             </Typography>
             <Typography>button for resume</Typography>
             <div class="circle"></div>
-
           </Grid>
         </Grid>
         <div
           style={{
-            borderRadius: 1,
+            borderRadius: "20px",
             border: "1px solid #4b4b4b",
             margin: "6vh",
             padding: "2.5vh 3.5vh",
+            boxShadow: "2px 2px 8px rgba(255, 255, 255, 0.12)",
           }}
         >
           <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -90,7 +95,7 @@ function HomeContent() {
                 variant="h4"
                 fontWeight="bold"
                 color={"#00FF7F"}
-                sx={{ marginBottom: "2vh", lineHeight: "2" }}
+                sx={{ marginBottom: "2vh", lineHeight: "2", textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
               >
                 About
               </Typography>
@@ -110,7 +115,7 @@ function HomeContent() {
                 variant="h4"
                 fontWeight="bold"
                 color={"#00FF7F"}
-                sx={{ marginBottom: "2vh", lineHeight: "2" }}
+                sx={{ marginBottom: "2vh", lineHeight: "2", textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
               >
                 Basic Information
               </Typography>
@@ -137,10 +142,11 @@ function HomeContent() {
               borderColor: "#00FF7F",
               "&::before, &::after": {
                 bgcolor: "#00FF7F",
+                boxShadow: "2px 2px 8px rgba(0, 255, 127, 0.5)",
               },
             }}
           >
-            <Typography variant="h4" fontWeight="bold">
+            <Typography variant="h4" fontWeight="bold" sx={{ textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}>
               Projects
             </Typography>
           </Divider>
@@ -157,10 +163,16 @@ function HomeContent() {
               borderColor: "#00FF7F",
               "&::before, &::after": {
                 bgcolor: "#00FF7F",
+                boxShadow: "2px 2px 8px rgba(0, 255, 127, 0.5)",
               },
             }}
           >
-            <Typography variant="h4" fontWeight="bold" color={"#00FF7F"}>
+            <Typography
+              variant="h4"
+              fontWeight="bold"
+              color={"#00FF7F"}
+              sx={{ textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
+            >
               Tech Stack
             </Typography>
           </Divider>
@@ -175,14 +187,29 @@ function HomeContent() {
           >
             {/* Row 1 */}
             <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
+              <div>React</div>
+              <div>JS</div>
+              <div>HTML5</div>
             </div>
             <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
+              <div>NodeJS</div>
+              <div>Express</div>
+              <div>fads</div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
+              <div>PostgreSQL</div>
+              <div>Python</div>
+              <div>Java</div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
+              <div>C#</div>
+              <div>fdas</div>
+              <div>fads</div>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-evenly", flexWrap: "wrap" }}>
+              <div>C</div>
+              <div>Go</div>
+              <div>MongoDB</div>
             </div>
           </div>
         </div>
