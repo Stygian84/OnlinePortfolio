@@ -56,6 +56,8 @@ code {
   background-color: white;
   background-size: cover;
   top: 45vh;
+  left: 50%;
+  top: 50%;
 }
 .circle {
   position: relative;
@@ -164,3 +166,46 @@ code {
 .icon-circle:hover {
   scale: 1.1;
 }
+
+#home {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  z-index: 0;
+}
+#black-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.resume-button {
+  border-radius: 10px;
+  border: 1px solid white;
+  padding: 7.5px 17.5px;
+  background: #131313;
+  margin-top: 1vh;
+  font-size: 2vh;
+  color: #4cd964;
+}
+#about-box {
+  border-radius: 20px;
+  border: 1px solid #4b4b4b;
+  margin: 6vh;
+  margin-top: 15vh;
+  padding: 2.5vh 3.5vh;
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, 0.12);
+}
+
+.overlay {
+  height: 0;
+}
+
+.overlay.hovered {
+  height: 100%;
+}
+

@@ -1,4 +1,4 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid, Stack, Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 import React, { useRef, useState, useEffect } from "react";
 import "../index.css";
@@ -8,7 +8,7 @@ import Box from "@mui/system/Box";
 import myPic from "../images/myPic.jpg";
 import github from "../images/github.png";
 import linkedin from "../images/linkedin.png";
-
+import HoverableGithubOverlay from "../components/HoverableGithubOverlay";
 function HomeTop() {
   // Scroll for Top Bar
   const handleClick = (targetID) => {
@@ -40,6 +40,7 @@ function HomeTop() {
 }
 
 function HomeContent() {
+  const [isHovered, setIsHovered] = useState(false);
   // Function to check if an element is in the viewport
   function isInViewport(element) {
     var rect = element.getBoundingClientRect();
@@ -74,38 +75,45 @@ function HomeContent() {
 
   // Initial check on page load
   animateOnScroll();
+  const aboutTypographyStyles = {
+    marginBottom: "2vh",
+    lineHeight: "2",
+    textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)",
+  };
   const typographyStyles = {
     marginBottom: "2vh",
     lineHeight: "2",
     display: "flex",
     alignItems: "center",
   };
+  const dividerStyles = {
+    width: "90%",
+    margin: "auto",
+    textAlign: "center",
+    color: "#00FF7F",
+    borderColor: "#00FF7F",
+    "&::before, &::after": {
+      bgcolor: "#00FF7F",
+      boxShadow: "2px 2px 8px rgba(0, 255, 127, 0.5)",
+    },
+  };
+  const projectCardContainerStyless = {
+    height: "100%",
+    display: "flex",
+    justifyContent: "center",
+  };
   const bgLink =
     "https://png.pngtree.com/background/20211215/original/pngtree-binary-matrix-code-flow-dark-abstract-background-picture-image_1466835.jpg";
   return (
+    // Title and Background Part
     <div id="content" className="content" style={{ position: "relative" }}>
       <div
         id="home"
         style={{
           backgroundImage: `url("${bgLink}")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          height: "50vh",
-          zIndex: 0,
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "50vh",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            zIndex: -1,
-          }}
-        ></div>
+        <div id="black-overlay"></div>
         <Grid container spacing={3} sx={{ marginBottom: "7.5vh" }}>
           <Grid
             item
@@ -122,14 +130,22 @@ function HomeContent() {
             <div className="circle" style={{ backgroundImage: `url(${myPic})` }}>
               {" "}
             </div>
-            <div
-              className="icon-circle"
-              style={{ transform: "translateX(80%)", backgroundImage: `url(${github})`, backgroundColor: "black" }}
-            />
-            <div
-              className="icon-circle"
-              style={{ transform: "translateX(-80%)", backgroundImage: `url(${linkedin})` }}
-            />
+            <a href="https://github.com/stygian84" target="_blank" rel="noopener noreferrer">
+              <div
+                className="icon-circle"
+                style={{ transform: "translateX(50%)", backgroundImage: `url(${github})`, backgroundColor: "black" }}
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nicholas-gandhi-peradidjaya/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div
+                className="icon-circle"
+                style={{ transform: "translateX(-150%)", backgroundImage: `url(${linkedin})` }}
+              />
+            </a>
             <Typography
               variant="h3"
               fontWeight="bold"
@@ -142,42 +158,18 @@ function HomeContent() {
               Aspiring Software Engineer | Tech Enthusiast |{" "}
               <span style={{ whiteSpace: "nowrap" }}>Web App Developer</span>
             </Typography>
-            <div
-              className="resume-button"
-              style={{
-                borderRadius: "10px",
-                border: "1px solid white",
-                padding: "7.5px 17.5px",
-                background: "#131313",
-                marginTop: "1vh",
-                fontSize: "2vh",
-                color: "#4cd964",
-              }}
-              onClick={handleDownload}
-            >
+            <div className="resume-button" onClick={handleDownload}>
               Resume
             </div>
           </Grid>
         </Grid>
-        <div
-          style={{
-            borderRadius: "20px",
-            border: "1px solid #4b4b4b",
-            margin: "6vh",
-            marginTop: "15vh",
-            padding: "2.5vh 3.5vh",
-            boxShadow: "2px 2px 8px rgba(255, 255, 255, 0.12)",
-          }}
-        >
+
+        {/* About Me Box */}
+        <div id="about-box">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div style={{ display: "flex", flexDirection: "column", width: "45%" }}>
-              <Typography
-                variant="h4"
-                fontWeight="bold"
-                color={"#00FF7F"}
-                sx={{ marginBottom: "2vh", lineHeight: "2", textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
-              >
-                About
+              <Typography variant="h4" fontWeight="bold" color={"#00FF7F"} sx={{ ...aboutTypographyStyles }}>
+                About Me
               </Typography>
               <Typography variant="h5">
                 Hi, I'm <span style={{ fontWeight: "bold" }}>Nicholas</span>. I'm most drawn to full-stack development,
@@ -187,12 +179,7 @@ function HomeContent() {
               </Typography>
             </div>
             <div style={{ display: "flex", flexDirection: "column", width: "45%" }}>
-              <Typography
-                variant="h4"
-                fontWeight="bold"
-                color={"#00FF7F"}
-                sx={{ marginBottom: "2vh", lineHeight: "2", textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
-              >
+              <Typography variant="h4" fontWeight="bold" color={"#00FF7F"} sx={{ ...aboutTypographyStyles }}>
                 Basic Information
               </Typography>
               <Typography variant="h5" sx={{ ...typographyStyles }}>
@@ -223,43 +210,146 @@ function HomeContent() {
             </div>
           </div>
         </div>
+
+        {/* Projects */}
         <div>
           <div id="projects" style={{ display: "flex", justifyContent: "space-evenly", margin: "7.5vh" }}></div>
-          <Divider
-            sx={{
-              width: "90%",
-              margin: "auto",
-              textAlign: "center",
-              color: "#00FF7F",
-              borderColor: "#00FF7F",
-              "&::before, &::after": {
-                bgcolor: "#00FF7F",
-                boxShadow: "2px 2px 8px rgba(0, 255, 127, 0.5)",
-              },
-            }}
-          >
-            <Typography variant="h4" fontWeight="bold" sx={{ textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}>
+          <Divider sx={{ ...dividerStyles }}>
+            <Typography
+              variant="h4"
+              fontWeight="bold"
+              marginBottom={"5vh"}
+              sx={{ textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
+            >
               Projects
             </Typography>
           </Divider>
-          <div style={{ display: "flex", justifyContent: "space-evenly", margin: "0 7.5vh" }}>Grid insert projects</div>
+
+          {/* Projects First Row */}
+          <Grid container spacing={6} justifyContent="center" marginBottom={"5vh"}>
+            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+              <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
+                <HoverableGithubOverlay
+                  image="web.png"
+                  height="200px"
+                  link="https://github.com/Stygian84/OnlinePortfolio"
+                />
+                <CardContent>
+                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                    Personal Website
+                  </Typography>
+                  <Divider />
+                  <Typography color="textSecondary">ReactJS, CSS, HTML5</Typography>
+                  <Typography variant="body2" component="p">
+                    My personal website serves as a digital portfolio showcasing my expertise, skills, and projects.{" "}
+                    {"\nThis website is still in development"}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+              <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
+                <CardMedia component="img" height="200" image="https://via.placeholder.com/300" alt="Placeholder" />
+                <CardContent>
+                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                    Plant Tracker App
+                  </Typography>
+                  <Divider />
+                  <Typography color="textSecondary">ReactJS, ExpressJS, PostgreSQL</Typography>
+                  <Typography variant="body2" component="p">
+                    Simple app to monitor the health of plants where the data are stored in a database.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+              <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
+                <HoverableGithubOverlay
+                  image="platformer.png"
+                  height="200px"
+                  link="https://github.com/Stygian84/PlatformerGame"
+                />
+                <CardContent>
+                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                    Platformer Game
+                  </Typography>
+                  <Divider />
+                  <Typography color="textSecondary">Unity, C#</Typography>
+                  <Typography variant="body2" component="p">
+                    Simple platformer game where the player needs to collect collectibles and kill a boss to finish the
+                    game.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+
+          {/* Projects Second Row */}
+          <Grid container spacing={6} justifyContent="center" marginBottom={"10vh"}>
+            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+              <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
+                <HoverableGithubOverlay image="wepack4u.png" height="200px" link="https://github.com/bojx96/WePack4U" />
+                <CardContent>
+                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                    Food Ordering App
+                  </Typography>
+                  <Divider />
+                  <Typography color="textSecondary">Android Studio, Java</Typography>
+                  <Typography variant="body2" component="p">
+                    Online ordering self pick-up app that aims reduce overall waiting time on take aways.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+              <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
+                <CardMedia component="img" height="200" image="https://via.placeholder.com/300" alt="Placeholder" />
+                <CardContent>
+                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                    OpenCV Aim Bot
+                  </Typography>
+                  <Divider />
+                  <Typography color="textSecondary">Python3</Typography>
+                  <Typography variant="body2" component="p">
+                    Implement OpenCV to detect enemies' head through color detection and size filtering on the screen.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+              <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
+                <HoverableGithubOverlay
+                  image="skytunes.jpg"
+                  height="200px"
+                  link="http://asd.courses.sutd.edu.sg/dti-teams/project-part-4-14/"
+                />
+                <CardContent>
+                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                    SkyTunes
+                  </Typography>
+                  <Divider />
+                  <Typography color="textSecondary">Python, RPi4, SolidWorks</Typography>
+                  <Typography variant="body2" component="p">
+                    Interactive physical musical wall inspired from{" "}
+                    <a href="https://nooknet.net/tunes" target="_blank" rel="noopener noreferrer">
+                      Town Tunes
+                    </a>{" "}
+                    mini games from Animal Crossing.
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
+          {/* Grid insert projects 1. this web 2. plant tracker app 3. opencv aim bot 4. unity platformer game 5. food
+            ordering app */}
         </div>
+
+        {/* Tech Stacks */}
         <div>
           <div id="techstack" style={{ display: "flex", justifyContent: "space-evenly", margin: "0 7.5vh" }}></div>
-          <Divider
-            sx={{
-              width: "90%",
-              margin: "auto",
-              textAlign: "center",
-              color: "00FF7F",
-              borderColor: "#00FF7F",
-              "&::before, &::after": {
-                bgcolor: "#00FF7F",
-                boxShadow: "2px 2px 8px rgba(0, 255, 127, 0.5)",
-              },
-            }}
-          >
+          <Divider sx={{ ...dividerStyles }}>
             <Typography
+              marginBottom={"5vh"}
               variant="h4"
               fontWeight="bold"
               color={"#00FF7F"}
@@ -295,7 +385,7 @@ function HomeContent() {
           <div className="tech-stack-row-container slide-from-left">
             <div className="tech-stack-row-item animate-row">
               <img src={require("../images/postgres.png")} alt="Logo" />{" "}
-              <Typography variant="h4">PostgresSQL</Typography>
+              <Typography variant="h4">PostgreSQL</Typography>
             </div>
             <div className="tech-stack-row-item animate-row">
               <img src={require("../images/python.png")} alt="Logo" /> <Typography variant="h4">Python</Typography>
@@ -326,4 +416,12 @@ function HomeContent() {
   );
 }
 
+function TechStackItem({ name, image }) {
+  return (
+    <div className="tech-stack-row-item animate-row">
+      <img src={image} alt="Logo" />
+      <Typography variant="h4">{name}</Typography>
+    </div>
+  );
+}
 export { HomeTop, HomeContent };
