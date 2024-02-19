@@ -208,4 +208,6 @@ code {
 .overlay.hovered {
   height: 100%;
 }
-
+.enlarge-hover:hover {
+  scale: 1.2;
+}

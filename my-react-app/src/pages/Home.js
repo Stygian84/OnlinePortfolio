@@ -231,6 +231,7 @@ function HomeContent() {
               <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
                 <HoverableGithubOverlay
                   image="web.png"
+                  overlayimage="github.png"
                   height="200px"
                   link="https://github.com/Stygian84/OnlinePortfolio"
                 />
@@ -249,7 +250,15 @@ function HomeContent() {
             </Grid>
             <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
               <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
-                <CardMedia component="img" height="200" image="https://via.placeholder.com/300" alt="Placeholder" />
+                <HoverableGithubOverlay
+                  image="planttracker (1).jpg"
+                  overlayimage="github.png"
+                  overlayimage2="website.png"
+                  height="200px"
+                  link="https://github.com/Stygian84/PlantTrackerApp"
+                  link2="https://planttracker.netlify.app"
+                  double={true}
+                />
                 <CardContent>
                   <Typography variant="h5" component="h2" fontWeight={"bold"}>
                     Plant Tracker App
@@ -257,7 +266,7 @@ function HomeContent() {
                   <Divider />
                   <Typography color="textSecondary">ReactJS, ExpressJS, PostgreSQL</Typography>
                   <Typography variant="body2" component="p">
-                    Simple app to monitor the health of plants where the data are stored in a database.
+                    Simple mobile web app to monitor the health of plants where the data are stored in a database.
                   </Typography>
                 </CardContent>
               </Card>
@@ -266,6 +275,7 @@ function HomeContent() {
               <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
                 <HoverableGithubOverlay
                   image="platformer.png"
+                  overlayimage="github.png"
                   height="200px"
                   link="https://github.com/Stygian84/PlatformerGame"
                 />
@@ -288,7 +298,12 @@ function HomeContent() {
           <Grid container spacing={6} justifyContent="center" marginBottom={"10vh"}>
             <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
               <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
-                <HoverableGithubOverlay image="wepack4u.png" height="200px" link="https://github.com/bojx96/WePack4U" />
+                <HoverableGithubOverlay
+                  image="wepack4u.png"
+                  overlayimage="github.png"
+                  height="200px"
+                  link="https://github.com/bojx96/WePack4U"
+                />
                 <CardContent>
                   <Typography variant="h5" component="h2" fontWeight={"bold"}>
                     Food Ordering App
@@ -303,7 +318,12 @@ function HomeContent() {
             </Grid>
             <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
               <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
-                <CardMedia component="img" height="200" image="https://via.placeholder.com/300" alt="Placeholder" />
+                <HoverableGithubOverlay
+                  image="web.png"
+                  overlayimage="github.png"
+                  height="200px"
+                  link="https://github.com/Stygian84/AimBotTest"
+                />
                 <CardContent>
                   <Typography variant="h5" component="h2" fontWeight={"bold"}>
                     OpenCV Aim Bot
@@ -320,6 +340,7 @@ function HomeContent() {
               <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
                 <HoverableGithubOverlay
                   image="skytunes.jpg"
+                  overlayimage="website.png"
                   height="200px"
                   link="http://asd.courses.sutd.edu.sg/dti-teams/project-part-4-14/"
                 />
