@@ -40,27 +40,52 @@ function HomeTop() {
 }
 
 function HomeContent() {
+  const gridRefRight = useRef(null);
+  const gridRefLeft = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
-  // Function to check if an element is in the viewport
-  function isInViewport(element) {
-    var rect = element.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  const [isVisibleRight, setIsVisibleRight] = useState(false);
+  const [isVisibleLeft, setIsVisibleLeft] = useState(false);
+  useEffect(() => {
+    const observerRight = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisibleRight(true);
+          } else {
+            setTimeout(() => {
+              setIsVisibleRight(false);
+            }, 1700);
+          }
+        });
+      },
+      { threshold: 0.05 }
     );
-  }
 
-  // Function to add animation class when element is in viewport
-  function animateOnScroll() {
-    var elements = document.querySelectorAll(".slide-from-left, .slide-from-right");
-    elements.forEach(function (element) {
-      if (isInViewport(element)) {
-        element.classList.add("animate");
-      }
-    });
-  }
+    observerRight.observe(gridRefRight.current);
+    return () => {
+      observerRight.disconnect();
+    };
+  }, []);
+  useEffect(() => {
+    const observerLeft = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisibleLeft(true);
+          } else {
+            setTimeout(() => {
+              setIsVisibleLeft(false);
+            }, 1700);
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+    observerLeft.observe(gridRefLeft.current);
+    return () => {
+      observerLeft.disconnect();
+    };
+  }, []);
 
   // Resume Download
   const handleDownload = () => {
@@ -70,11 +95,7 @@ function HomeContent() {
     anchor.download = "NicholasGandhi_Resume.pdf";
     anchor.click();
   };
-  // Event listener for scroll
-  window.addEventListener("scroll", animateOnScroll);
 
-  // Initial check on page load
-  animateOnScroll();
   const aboutTypographyStyles = {
     marginBottom: "2vh",
     lineHeight: "2",
@@ -226,141 +247,146 @@ function HomeContent() {
           </Divider>
 
           {/* Projects First Row */}
-          <Grid container spacing={6} justifyContent="center" marginBottom={"5vh"}>
-            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-              <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
-                <HoverableGithubOverlay
-                  image="web.png"
-                  overlayimage="github.png"
-                  height="200px"
-                  link="https://github.com/Stygian84/OnlinePortfolio"
-                />
-                <CardContent>
-                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
-                    Personal Website
-                  </Typography>
-                  <Divider />
-                  <Typography color="textSecondary">ReactJS, CSS, HTML5</Typography>
-                  <Typography variant="body2" component="p">
-                    My personal website serves as a digital portfolio showcasing my expertise, skills, and projects.{" "}
-                    {"\nThis website is still in development"}
-                  </Typography>
-                </CardContent>
-              </Card>
+          <div ref={gridRefRight} className={isVisibleRight ? "slide-in" : ""}>
+            <Grid container spacing={6} justifyContent="center" marginBottom={"5vh"}>
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="web.png"
+                    overlayimage="github.png"
+                    height="200px"
+                    link="https://github.com/Stygian84/OnlinePortfolio"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      Personal Website
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">ReactJS, CSS, HTML5</Typography>
+                    <Typography variant="body2" component="p">
+                      My personal website serves as a digital portfolio showcasing my expertise, skills, and projects.{" "}
+                      {"\nThis website is still in development"}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="planttracker (1).jpg"
+                    overlayimage="github.png"
+                    overlayimage2="website.png"
+                    height="200px"
+                    link="https://github.com/Stygian84/PlantTrackerApp"
+                    link2="https://planttracker.netlify.app"
+                    double={true}
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      Plant Tracker App
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">React, ExpressJS, PostgreSQL, Python</Typography>
+                    <Typography variant="body2" component="p">
+                      Simple mobile web app to monitor the health of plants where the data are stored in a database.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="platformer.png"
+                    overlayimage="github.png"
+                    height="200px"
+                    link="https://github.com/Stygian84/PlatformerGame"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      Platformer Game
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">Unity, C#</Typography>
+                    <Typography variant="body2" component="p">
+                      Simple platformer game where the player needs to collect collectibles and kill a boss to finish
+                      the game.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
             </Grid>
-            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-              <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
-                <HoverableGithubOverlay
-                  image="planttracker (1).jpg"
-                  overlayimage="github.png"
-                  overlayimage2="website.png"
-                  height="200px"
-                  link="https://github.com/Stygian84/PlantTrackerApp"
-                  link2="https://planttracker.netlify.app"
-                  double={true}
-                />
-                <CardContent>
-                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
-                    Plant Tracker App
-                  </Typography>
-                  <Divider />
-                  <Typography color="textSecondary">React, ExpressJS, PostgreSQL, Python</Typography>
-                  <Typography variant="body2" component="p">
-                    Simple mobile web app to monitor the health of plants where the data are stored in a database.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-              <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
-                <HoverableGithubOverlay
-                  image="platformer.png"
-                  overlayimage="github.png"
-                  height="200px"
-                  link="https://github.com/Stygian84/PlatformerGame"
-                />
-                <CardContent>
-                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
-                    Platformer Game
-                  </Typography>
-                  <Divider />
-                  <Typography color="textSecondary">Unity, C#</Typography>
-                  <Typography variant="body2" component="p">
-                    Simple platformer game where the player needs to collect collectibles and kill a boss to finish the
-                    game.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+          </div>
 
           {/* Projects Second Row */}
-          <Grid container spacing={6} justifyContent="center" marginBottom={"10vh"}>
-            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-              <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
-                <HoverableGithubOverlay
-                  image="wepack4u.png"
-                  overlayimage="github.png"
-                  height="200px"
-                  link="https://github.com/bojx96/WePack4U"
-                />
-                <CardContent>
-                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
-                    Food Ordering App
-                  </Typography>
-                  <Divider />
-                  <Typography color="textSecondary">Android Studio, Java</Typography>
-                  <Typography variant="body2" component="p">
-                    Online ordering self pick-up app that aims reduce overall waiting time on take aways.
-                  </Typography>
-                </CardContent>
-              </Card>
+
+          <div ref={gridRefLeft} className={isVisibleLeft ? "slide-in-from-left" : ""}>
+            <Grid container spacing={6} justifyContent="center" marginBottom={"10vh"}>
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="wepack4u.png"
+                    overlayimage="github.png"
+                    height="200px"
+                    link="https://github.com/bojx96/WePack4U"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      Food Ordering App
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">Android Studio, Java</Typography>
+                    <Typography variant="body2" component="p">
+                      Online ordering self pick-up app that aims reduce overall waiting time on take aways.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="aimbot.jpg"
+                    overlayimage="github.png"
+                    height="200px"
+                    link="https://github.com/Stygian84/AimBotTest"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      OpenCV Aim Bot
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">Python3</Typography>
+                    <Typography variant="body2" component="p">
+                      Implement OpenCV to detect enemies' head through color detection and size filtering on the screen.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="skytunes.jpg"
+                    overlayimage="website.png"
+                    height="200px"
+                    link="http://asd.courses.sutd.edu.sg/dti-teams/project-part-4-14/"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      SkyTunes
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">Python, RPi4, SolidWorks</Typography>
+                    <Typography variant="body2" component="p">
+                      Interactive physical musical wall inspired from{" "}
+                      <a href="https://nooknet.net/tunes" target="_blank" rel="noopener noreferrer">
+                        Town Tunes
+                      </a>{" "}
+                      mini games from Animal Crossing.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
             </Grid>
-            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-              <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
-                <HoverableGithubOverlay
-                  image="aimbot.jpg"
-                  overlayimage="github.png"
-                  height="200px"
-                  link="https://github.com/Stygian84/AimBotTest"
-                />
-                <CardContent>
-                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
-                    OpenCV Aim Bot
-                  </Typography>
-                  <Divider />
-                  <Typography color="textSecondary">Python3</Typography>
-                  <Typography variant="body2" component="p">
-                    Implement OpenCV to detect enemies' head through color detection and size filtering on the screen.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-              <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
-                <HoverableGithubOverlay
-                  image="skytunes.jpg"
-                  overlayimage="website.png"
-                  height="200px"
-                  link="http://asd.courses.sutd.edu.sg/dti-teams/project-part-4-14/"
-                />
-                <CardContent>
-                  <Typography variant="h5" component="h2" fontWeight={"bold"}>
-                    SkyTunes
-                  </Typography>
-                  <Divider />
-                  <Typography color="textSecondary">Python, RPi4, SolidWorks</Typography>
-                  <Typography variant="body2" component="p">
-                    Interactive physical musical wall inspired from{" "}
-                    <a href="https://nooknet.net/tunes" target="_blank" rel="noopener noreferrer">
-                      Town Tunes
-                    </a>{" "}
-                    mini games from Animal Crossing.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+          </div>
           {/* Grid insert projects 1. this web 2. plant tracker app 3. opencv aim bot 4. unity platformer game 5. food
             ordering app */}
         </div>

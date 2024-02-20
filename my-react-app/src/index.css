@@ -211,3 +211,29 @@ code {
 .enlarge-hover:hover {
   scale: 1.2;
 }
+.slide-in {
+  animation: slideInAnimation 1.5s ease forwards;
+}
+
+@keyframes slideInAnimation {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+.slide-in-from-left {
+  animation: slideInFromLeftAnimation 1.5s ease forwards;
+}
+
+@keyframes slideInFromLeftAnimation {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
