@@ -264,7 +264,7 @@ function HomeContent() {
                     Plant Tracker App
                   </Typography>
                   <Divider />
-                  <Typography color="textSecondary">ReactJS, ExpressJS, PostgreSQL</Typography>
+                  <Typography color="textSecondary">React, ExpressJS, PostgreSQL, Python</Typography>
                   <Typography variant="body2" component="p">
                     Simple mobile web app to monitor the health of plants where the data are stored in a database.
                   </Typography>
