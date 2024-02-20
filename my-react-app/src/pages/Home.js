@@ -54,7 +54,7 @@ function HomeContent() {
           } else {
             setTimeout(() => {
               setIsVisibleRight(false);
-            }, 1700);
+            }, 3000);
           }
         });
       },
@@ -75,7 +75,7 @@ function HomeContent() {
           } else {
             setTimeout(() => {
               setIsVisibleLeft(false);
-            }, 1700);
+            }, 2500);
           }
         });
       },
