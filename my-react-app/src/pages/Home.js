@@ -319,7 +319,7 @@ function HomeContent() {
             <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
               <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
                 <HoverableGithubOverlay
-                  image="web.png"
+                  image="aimbot.jpg"
                   overlayimage="github.png"
                   height="200px"
                   link="https://github.com/Stygian84/AimBotTest"
