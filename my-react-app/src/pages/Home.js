@@ -124,7 +124,7 @@ function HomeContent() {
               margin: "5vh",
             }}
           >
-            <div className="circle" style={{ backgroundImage: `url(${myPic})` }}>
+            <div className="circle" style={{ backgroundImage: `url(${myPic})`, boxShadow: `0 0 1px 1px #00FF7F` }}>
               {" "}
             </div>
             <a href="https://github.com/stygian84" target="_blank" rel="noopener noreferrer">

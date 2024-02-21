@@ -44,7 +44,13 @@ function BinaryAnimation() {
       {matrix.map((row, rowIndex) => (
         <div key={rowIndex} style={{ display: "inline-block", whiteSpace: "nowrap", margin: "0" }}>
           {row.map((digit, colIndex) => (
-            <span key={`${rowIndex}-${colIndex}`} style={{ color: calculateColor(rowIndex) }}>
+            <span
+              key={`${rowIndex}-${colIndex}`}
+              style={{
+                color: calculateColor(rowIndex),
+                textShadow: `0 0 1px ${calculateColor(rowIndex)}`,
+              }}
+            >
               {digit}
             </span>
           ))}

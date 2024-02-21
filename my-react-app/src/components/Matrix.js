@@ -8,13 +8,13 @@ function MatrixAnimation() {
 
   // Function to update the matrix with random characters
   const updateMatrix = () => {
-    const newMatrix = Array.from({ length: 500 }, () => Array.from({ length: 1 }, () => getRandomChar()));
+    const newMatrix = Array.from({ length: 450 }, () => Array.from({ length: 1 }, () => getRandomChar()));
     setMatrix(newMatrix);
   };
 
   useEffect(() => {
     updateMatrix();
-    const interval = setInterval(updateMatrix, 150);
+    const interval = setInterval(updateMatrix, 100);
     return () => clearInterval(interval);
   }, []);
 
@@ -36,7 +36,13 @@ function MatrixAnimation() {
       {matrix.map((row, rowIndex) => (
         <div key={rowIndex} style={{ display: "inline-block", whiteSpace: "nowrap", margin: "0" }}>
           {row.map((char, colIndex) => (
-            <span key={`${rowIndex}-${colIndex}`} style={{ color: "#00FF00" }}>
+            <span
+              key={`${rowIndex}-${colIndex}`}
+              style={{
+                color: "#00FF00",
+                padding: "2px",
+              }}
+            >
               {char}
             </span>
           ))}
