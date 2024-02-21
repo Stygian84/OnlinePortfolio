@@ -12,11 +12,10 @@ function MatrixAnimation() {
     setMatrix(newMatrix);
   };
 
-  // Update the matrix on component mount
   useEffect(() => {
     updateMatrix();
-    const interval = setInterval(updateMatrix, 100); // Update every 100 milliseconds
-    return () => clearInterval(interval); // Cleanup function
+    const interval = setInterval(updateMatrix, 150);
+    return () => clearInterval(interval);
   }, []);
 
   return (
