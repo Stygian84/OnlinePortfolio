@@ -298,8 +298,11 @@ function HomeContent() {
                   <HoverableGithubOverlay
                     image="platformer.png"
                     overlayimage="github.png"
+                    overlayimage2="youtube.png"
                     height="200px"
                     link="https://github.com/Stygian84/PlatformerGame"
+                    link2="https://youtu.be/ikF48N-eQj0"
+                    double={true}
                   />
                   <CardContent>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
