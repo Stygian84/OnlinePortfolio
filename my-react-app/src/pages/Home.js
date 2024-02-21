@@ -10,6 +10,8 @@ import github from "../images/github.png";
 import linkedin from "../images/linkedin.png";
 import HoverableGithubOverlay from "../components/HoverableGithubOverlay";
 import { useIntersectionObserver } from "../components/useIntersectionObserver";
+import MatrixAnimation from "../components/Matrix";
+import BinaryAnimation from "../components/BinaryAnimation";
 
 function HomeTop() {
   // Scroll for Top Bar
@@ -101,11 +103,12 @@ function HomeContent() {
   return (
     // Title and Background Part
     <div id="content" className="content" style={{ position: "relative" }}>
+      <BinaryAnimation />
       <div
         id="home"
-        style={{
-          backgroundImage: `url("${bgLink}")`,
-        }}
+        // style={{
+        //   backgroundImage: `url("${bgLink}")`,
+        // }}
       >
         <div id="black-overlay"></div>
         <Grid container spacing={3} sx={{ marginBottom: "7.5vh" }}>
@@ -157,7 +160,6 @@ function HomeContent() {
             </div>
           </Grid>
         </Grid>
-
         {/* About Me Box */}
         <div id="about-box">
           <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -447,17 +449,10 @@ function HomeContent() {
             </div>
           </div>
         </div>
+        <MatrixAnimation />
       </div>
     </div>
   );
 }
 
-function TechStackItem({ name, image }) {
-  return (
-    <div className="tech-stack-row-item animate-row">
-      <img src={image} alt="Logo" />
-      <Typography variant="h4">{name}</Typography>
-    </div>
-  );
-}
 export { HomeTop, HomeContent };
