@@ -9,6 +9,8 @@ import myPic from "../images/myPic.jpg";
 import github from "../images/github.png";
 import linkedin from "../images/linkedin.png";
 import HoverableGithubOverlay from "../components/HoverableGithubOverlay";
+import { useIntersectionObserver } from "../components/useIntersectionObserver";
+
 function HomeTop() {
   // Scroll for Top Bar
   const handleClick = (targetID) => {
@@ -40,52 +42,23 @@ function HomeTop() {
 }
 
 function HomeContent() {
-  const gridRefRight = useRef(null);
-  const gridRefLeft = useRef(null);
+  const gridRefProject1 = useRef(null);
+  const gridRefProject2 = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
-  const [isVisibleRight, setIsVisibleRight] = useState(false);
-  const [isVisibleLeft, setIsVisibleLeft] = useState(false);
-  useEffect(() => {
-    const observerRight = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisibleRight(true);
-          } else {
-            setTimeout(() => {
-              setIsVisibleRight(false);
-            }, 3000);
-          }
-        });
-      },
-      { threshold: 0.05 }
-    );
+  const gridRef1 = useRef(null);
+  const gridRef2 = useRef(null);
+  const gridRef3 = useRef(null);
+  const gridRef4 = useRef(null);
+  const gridRef5 = useRef(null);
 
-    observerRight.observe(gridRefRight.current);
-    return () => {
-      observerRight.disconnect();
-    };
-  }, []);
-  useEffect(() => {
-    const observerLeft = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisibleLeft(true);
-          } else {
-            setTimeout(() => {
-              setIsVisibleLeft(false);
-            }, 2500);
-          }
-        });
-      },
-      { threshold: 0.05 }
-    );
-    observerLeft.observe(gridRefLeft.current);
-    return () => {
-      observerLeft.disconnect();
-    };
-  }, []);
+  const slideDuration = 3000; // Adjust as needed
+  const isVisible1 = useIntersectionObserver(gridRef1, slideDuration);
+  const isVisible2 = useIntersectionObserver(gridRef2, slideDuration);
+  const isVisible3 = useIntersectionObserver(gridRef3, slideDuration);
+  const isVisible4 = useIntersectionObserver(gridRef4, slideDuration);
+  const isVisible5 = useIntersectionObserver(gridRef5, slideDuration);
+  const projectVisible1 = useIntersectionObserver(gridRefProject1, slideDuration);
+  const projectVisible2 = useIntersectionObserver(gridRefProject2, slideDuration);
 
   // Resume Download
   const handleDownload = () => {
@@ -247,7 +220,7 @@ function HomeContent() {
           </Divider>
 
           {/* Projects First Row */}
-          <div ref={gridRefRight} className={isVisibleRight ? "slide-in" : ""}>
+          <div ref={gridRefProject1} className={projectVisible1 ? "slide-in" : ""}>
             <Grid container spacing={6} justifyContent="center" marginBottom={"5vh"}>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
                 <Card sx={{ height: "50vh", width: "30vw", position: "relative" }}>
@@ -322,7 +295,7 @@ function HomeContent() {
 
           {/* Projects Second Row */}
 
-          <div ref={gridRefLeft} className={isVisibleLeft ? "slide-in-from-left" : ""}>
+          <div ref={gridRefProject2} className={projectVisible2 ? "slide-in-from-left" : ""}>
             <Grid container spacing={6} justifyContent="center" marginBottom={"10vh"}>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
                 <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
@@ -408,7 +381,10 @@ function HomeContent() {
               Tech Stack
             </Typography>
           </Divider>
-          <div className="tech-stack-row-container slide-from-left">
+          <div
+            ref={gridRef1}
+            className={isVisible1 ? "tech-stack-row-container slide-in-from-left" : "tech-stack-row-container"}
+          >
             <div className="tech-stack-row-item animate-row">
               <img src={require("../images/react.png")} alt="Logo" /> <Typography variant="h4">React</Typography>
             </div>
@@ -420,7 +396,7 @@ function HomeContent() {
             </div>
           </div>
 
-          <div className="tech-stack-row-container slide-from-right">
+          <div ref={gridRef2} className={isVisible2 ? "tech-stack-row-container slide-in" : "tech-stack-row-container"}>
             <div className="tech-stack-row-item animate-row">
               <img src={require("../images/c.png")} alt="Logo" /> <Typography variant="h4">C</Typography>
             </div>
@@ -432,7 +408,10 @@ function HomeContent() {
             </div>
           </div>
 
-          <div className="tech-stack-row-container slide-from-left">
+          <div
+            ref={gridRef3}
+            className={isVisible3 ? "tech-stack-row-container slide-in-from-left" : "tech-stack-row-container"}
+          >
             <div className="tech-stack-row-item animate-row">
               <img src={require("../images/postgres.png")} alt="Logo" />{" "}
               <Typography variant="h4">PostgreSQL</Typography>
@@ -445,15 +424,22 @@ function HomeContent() {
             </div>
           </div>
 
-          <div className="tech-stack-row-container2 slide-from-right">
+          <div
+            ref={gridRef4}
+            className={isVisible4 ? "tech-stack-row-container2 slide-in" : "tech-stack-row-container2"}
+          >
             <div className="tech-stack-row-item animate-row">
               <img src={require("../images/mongodb.jpg")} alt="Logo" /> <Typography variant="h4">MongoDB</Typography>
             </div>
             <div className="tech-stack-row-item animate-row">
               <img src={require("../images/go.png")} alt="Logo" /> <Typography variant="h4">Go</Typography>
             </div>
-
-            <div className="tech-stack-row-item animate-row slide-from-left">
+          </div>
+          <div
+            ref={gridRef5}
+            className={isVisible5 ? "tech-stack-row-container2 slide-in-from-left" : "tech-stack-row-container2"}
+          >
+            <div className="tech-stack-row-item animate-row">
               <img src={require("../images/nodejs.jpg")} alt="Logo" /> <Typography variant="h4">NodeJS</Typography>
             </div>
             <div className="tech-stack-row-item animate-row">

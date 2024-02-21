@@ -75,12 +75,7 @@ code {
   max-width: 80%;
   justify-items: center;
 }
-.slide-from-left {
-  animation: slideInFromLeft 0.5s ease-out;
-}
-.slide-from-right {
-  animation: slideInFromRight 0.5s ease-out;
-}
+
 .tech-stack-row-item {
   display: flex;
   align-items: center;
@@ -128,29 +123,6 @@ code {
 /* Hide the scrollbar */
 ::-webkit-scrollbar {
   display: none;
-}
-
-/* Add animation keyframes */
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
 
 /* Alternate animation direction for odd rows */
