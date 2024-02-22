@@ -42,7 +42,7 @@ code {
   grid-area: content;
   background-color: #020202;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
@@ -235,7 +235,6 @@ code {
   }
 }
 
-
 .top {
   transition: transform 0.5s ease;
   transform: translateX(100%);
@@ -243,4 +242,33 @@ code {
 
 .top.show {
   transform: translateX(0);
+}
+
+/* For screens smaller than 600px (mobile devices) */
+@media only screen and (max-width: 600px) {
+  .top > div {
+    font-size: 0.5em;
+    margin: 0 2vw;
+  }
+  .icon-circle {
+    top: 55vh;
+  }
+  #about-box-child {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  #about-box-child > div {
+    width: 90% !important;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2.5vh;
+  }
+  #about-box-child > div:nth-child(2) > h5 {
+    word-break: break-all;
+    font-size: 1.1rem;
+  }
+  #projects > .MuiGrid-root {
+    margin: 0 auto;
+  }
 }

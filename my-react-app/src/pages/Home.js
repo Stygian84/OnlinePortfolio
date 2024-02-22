@@ -110,8 +110,6 @@ function HomeContent() {
     justifyContent: "center",
   };
   const projectCardContentStyle = { backgroundColor: "#f8f9fa", height: "100%" };
-  const bgLink =
-    "https://png.pngtree.com/background/20211215/original/pngtree-binary-matrix-code-flow-dark-abstract-background-picture-image_1466835.jpg";
   return (
     // Title and Background Part
     <div id="content" className="content" style={{ position: "relative" }}>

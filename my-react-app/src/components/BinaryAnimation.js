@@ -27,7 +27,7 @@ function BinaryAnimation() {
   };
 
   return (
-    <div
+    <div id="binary-animation"
       style={{
         position: "absolute",
         zIndex: "0",
