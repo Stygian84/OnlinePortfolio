@@ -8,7 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: whitesmoke;
-  background: #191919;
+  background: #020202;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -27,7 +27,7 @@ code {
   overflow: hidden;
 }
 .divider {
-  background: #191919;
+  background: #020202;
 }
 .top {
   grid-area: top;
@@ -35,12 +35,12 @@ code {
   z-index: 1;
   padding-top: 2.5vh;
   padding-right: 5vw;
-  background: #191919;
+  background: #020202;
 }
 .content {
   position: relative;
   grid-area: content;
-  background-color: #131313;
+  background-color: #020202;
   height: 100%;
   width: 100%;
   display: flex;
@@ -159,7 +159,7 @@ code {
   border-radius: 10px;
   border: 1px solid white;
   padding: 7.5px 17.5px;
-  background: #131313;
+  background: #020202;
   margin-top: 1vh;
   font-size: 2vh;
   color: #4cd964;

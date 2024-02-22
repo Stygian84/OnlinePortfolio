@@ -18,7 +18,7 @@ root.render(
           sx={{
             borderColor: "#404040",
             "&::before, &::after": {
-              bgcolor: "#404040",
+              bgcolor: "#020202",
               boxShadow: "2px 2px 8px rgba(64, 64, 64, 0.5)",
             },
           }}
