@@ -3,7 +3,6 @@ import { Grid, Stack, Card, CardContent, CardMedia, Typography } from "@mui/mate
 import React, { useRef, useState, useEffect } from "react";
 import "../index.css";
 import { Divider } from "@mui/material";
-import useInViewport from "../utils/useInViewPort";
 import Box from "@mui/system/Box";
 import myPic from "../images/myPic.jpg";
 import github from "../images/github.png";
@@ -14,6 +13,11 @@ import MatrixAnimation from "../components/Matrix";
 import BinaryAnimation from "../components/BinaryAnimation";
 
 function HomeTop() {
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    setShowTop(true);
+  }, []);
   // Scroll for Top Bar
   const handleClick = (targetID) => {
     const targetElement = document.getElementById(targetID);
@@ -23,8 +27,9 @@ function HomeTop() {
       console.error(`Element with ID '${targetID}' not found.`);
     }
   };
+
   return (
-    <div id="top" className="top">
+    <div id="top" className={`top ${showTop ? 'show' : ''}`}>
       <Stack
         direction="row"
         spacing={3}

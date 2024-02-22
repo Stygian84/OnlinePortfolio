@@ -234,3 +234,13 @@ code {
     opacity: 1; /* End with opacity 1 */
   }
 }
+
+
+.top {
+  transition: transform 0.5s ease;
+  transform: translateX(100%);
+}
+
+.top.show {
+  transform: translateX(0);
+}
