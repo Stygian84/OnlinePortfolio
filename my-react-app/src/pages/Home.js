@@ -370,7 +370,7 @@ function HomeContent() {
           </div>
 
           {/* Projects Third Row */}
-          <div ref={gridRefProject3} className={projectVisible3 ? "slide-in-from-left" : ""}>
+          <div ref={gridRefProject3} className={projectVisible3 ? "slide-in" : ""}>
             <Grid container spacing={8} justifyContent="center" marginBottom={"10vh"}>
               <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
                 <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>

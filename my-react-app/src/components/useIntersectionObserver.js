@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from "react";
 
 export function useIntersectionObserver(ref, slideDuration) {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,13 +10,14 @@ export function useIntersectionObserver(ref, slideDuration) {
           if (entry.isIntersecting) {
             setIsVisible(true);
           } else {
-            setTimeout(() => {
+            const timeoutID = setTimeout(() => {
               setIsVisible(false);
             }, slideDuration);
+            return () => clearTimeout(timeoutID);
           }
         });
       },
-      { threshold: 0.05 }
+      { threshold: 0.0 }
     );
 
     observer.observe(ref.current);
