@@ -44,10 +44,12 @@ function HomeTop() {
 }
 
 function HomeContent() {
+  const [isHovered, setIsHovered] = useState(false);
+  const gridRefHeader1 = useRef(null);
+  const gridRefHeader2 = useRef(null);
   const gridRefProject1 = useRef(null);
   const gridRefProject2 = useRef(null);
   const gridRefProject3 = useRef(null);
-  const [isHovered, setIsHovered] = useState(false);
   const gridRef1 = useRef(null);
   const gridRef2 = useRef(null);
   const gridRef3 = useRef(null);
@@ -63,6 +65,8 @@ function HomeContent() {
   const projectVisible1 = useIntersectionObserver(gridRefProject1, slideDuration);
   const projectVisible2 = useIntersectionObserver(gridRefProject2, slideDuration);
   const projectVisible3 = useIntersectionObserver(gridRefProject3, slideDuration);
+  const headerVisible1 = useIntersectionObserver(gridRefHeader1, slideDuration);
+  const headerVisible2 = useIntersectionObserver(gridRefHeader2, slideDuration);
 
   // Resume Download
   const handleDownload = () => {
@@ -212,8 +216,12 @@ function HomeContent() {
 
         {/* Projects */}
         <div>
-          <div id="projects" style={{ display: "flex", justifyContent: "space-evenly", margin: "7.5vh" }}></div>
-          <Divider sx={{ ...dividerStyles }}>
+          <div
+            ref={gridRefHeader1}
+            id="projects"
+            style={{ display: "flex", justifyContent: "space-evenly", margin: "7.5vh" }}
+          ></div>
+          <Divider sx={{ ...dividerStyles }} className={headerVisible1 ? "bounce-from-below" : ""}>
             <Typography
               variant="h4"
               fontWeight="bold"
@@ -420,8 +428,12 @@ function HomeContent() {
 
         {/* Tech Stacks */}
         <div>
-          <div id="techstack" style={{ display: "flex", justifyContent: "space-evenly", margin: "0 7.5vh" }}></div>
-          <Divider sx={{ ...dividerStyles }}>
+          <div
+            ref={gridRefHeader2}
+            id="techstack"
+            style={{ display: "flex", justifyContent: "space-evenly", margin: "0 7.5vh" }}
+          ></div>
+          <Divider sx={{ ...dividerStyles }} className={headerVisible2 ? "bounce-from-below" : ""}>
             <Typography
               marginBottom={"5vh"}
               variant="h4"

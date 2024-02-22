@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useIntersectionObserver } from "./useIntersectionObserver";
 
 function MatrixAnimation() {
   const [matrix, setMatrix] = useState([]);
+  const matrixRef = useRef(null);
+  const isVisible = useIntersectionObserver(matrixRef, 1000);
 
   // Function to generate a random character
   const getRandomChar = () => String.fromCharCode(Math.floor(Math.random() * 94) + 33);
@@ -20,6 +23,7 @@ function MatrixAnimation() {
 
   return (
     <div
+      ref={matrixRef}
       style={{
         position: "relative",
         zIndex: "0",
@@ -33,22 +37,35 @@ function MatrixAnimation() {
         opacity: 0.5,
       }}
     >
-      {matrix.map((row, rowIndex) => (
-        <div key={rowIndex} style={{ display: "inline-block", whiteSpace: "nowrap", margin: "0" }}>
-          {row.map((char, colIndex) => (
-            <span
-              key={`${rowIndex}-${colIndex}`}
-              style={{
-                color: "#00FF00",
-                padding: "2px",
-              }}
-            >
-              {char}
-            </span>
-          ))}
-          <br />
-        </div>
-      ))}
+      {isVisible ? (
+        matrix.map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            style={{
+              display: "inline-block",
+              whiteSpace: "nowrap",
+              margin: "0",
+              opacity: 0,
+              animation: `fadeIn 0.20s ${rowIndex * 0.02}s forwards`,
+            }}
+          >
+            {row.map((char, colIndex) => (
+              <span
+                key={`${rowIndex}-${colIndex}`}
+                style={{
+                  color: "#00FF00",
+                  padding: "2px",
+                }}
+              >
+                {char}
+              </span>
+            ))}
+            <br />
+          </div>
+        ))
+      ) : (
+        <div />
+      )}
     </div>
   );
 }
