@@ -244,6 +244,20 @@ code {
   transform: translateX(0);
 }
 
+.change-opacity {
+  animation: changeOpacity 2s ease forwards;
+}
+.zero-opacity{
+  opacity: 0;
+}
+@keyframes changeOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.75;
+  }
+}
 /* For screens smaller than 600px (mobile devices) */
 @media only screen and (max-width: 600px) {
   .top > div {

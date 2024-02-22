@@ -117,12 +117,7 @@ function HomeContent() {
     // Title and Background Part
     <div id="content" className="content" style={{ position: "relative" }}>
       <BinaryAnimation />
-      <div
-        id="home"
-        // style={{
-        //   backgroundImage: `url("${bgLink}")`,
-        // }}
-      >
+      <div id="home">
         <div id="black-overlay"></div>
         <Grid container spacing={3} sx={{ marginBottom: "7.5vh" }}>
           <Grid

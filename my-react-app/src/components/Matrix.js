@@ -4,7 +4,7 @@ import { useIntersectionObserver } from "./useIntersectionObserver";
 function MatrixAnimation() {
   const [matrix, setMatrix] = useState([]);
   const matrixRef = useRef(null);
-  const isVisible = useIntersectionObserver(matrixRef, 1000);
+  const isVisible = useIntersectionObserver(matrixRef, 100000);
 
   // Function to generate a random character
   const getRandomChar = () => String.fromCharCode(Math.floor(Math.random() * 94) + 33);

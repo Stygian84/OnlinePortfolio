@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function BinaryAnimation() {
   const [matrix, setMatrix] = useState([]);
+  const [matrixOpacity, setMatrixOpacity] = useState(false);
 
   const getRandomBinaryDigit = () => (Math.random() < 0.5 ? "0" : "1");
 
@@ -14,6 +15,7 @@ function BinaryAnimation() {
   useEffect(() => {
     updateMatrix();
     const interval = setInterval(updateMatrix, 150);
+    setMatrixOpacity(true);
     return () => clearInterval(interval);
   }, []);
 
@@ -27,7 +29,7 @@ function BinaryAnimation() {
   };
 
   return (
-    <div id="binary-animation"
+    <div id="binary-animation" className={` ${matrixOpacity ? "change-opacity" : "zero-opacity"}`}
       style={{
         position: "absolute",
         zIndex: "0",
