@@ -46,6 +46,7 @@ function HomeTop() {
 function HomeContent() {
   const gridRefProject1 = useRef(null);
   const gridRefProject2 = useRef(null);
+  const gridRefProject3 = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const gridRef1 = useRef(null);
   const gridRef2 = useRef(null);
@@ -61,6 +62,7 @@ function HomeContent() {
   const isVisible5 = useIntersectionObserver(gridRef5, slideDuration);
   const projectVisible1 = useIntersectionObserver(gridRefProject1, slideDuration);
   const projectVisible2 = useIntersectionObserver(gridRefProject2, slideDuration);
+  const projectVisible3 = useIntersectionObserver(gridRefProject3, slideDuration);
 
   // Resume Download
   const handleDownload = () => {
@@ -359,6 +361,52 @@ function HomeContent() {
                         Town Tunes
                       </a>{" "}
                       mini games from Animal Crossing.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </div>
+
+          {/* Projects Third Row */}
+          <div ref={gridRefProject3} className={projectVisible3 ? "slide-in-from-left" : ""}>
+            <Grid container spacing={8} justifyContent="center" marginBottom={"10vh"}>
+              <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="fpga.png"
+                    overlayimage="github.png"
+                    height="200px"
+                    link="https://github.com/Stygian84/FPGA-Group-14"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      FPGA Arcade Game
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">Lucid, Verilog, Python</Typography>
+                    <Typography variant="body2" component="p">
+                      Wordle-inspired arcade game made using Alchitry.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: "50vh", width: "22.5vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="githubprofile.png"
+                    overlayimage="github.png"
+                    height="200px"
+                    link="https://github.com/Stygian84/LoyaltyApp"
+                  />
+                  <CardContent>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      Loyalty App
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">Go, JS, CSS, SQL</Typography>
+                    <Typography variant="body2" component="p">
+                      Collaborate with a team of 5 to create a loyalty web app.
                     </Typography>
                   </CardContent>
                 </Card>
