@@ -29,7 +29,7 @@ function HomeTop() {
   };
 
   return (
-    <div id="top" className={`top ${showTop ? 'show' : ''}`}>
+    <div id="top" className={`top ${showTop ? "show" : ""}`}>
       <Stack
         direction="row"
         spacing={3}
@@ -49,6 +49,7 @@ function HomeTop() {
 }
 
 function HomeContent() {
+  const [showAbout, setShowAbout] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const gridRefHeader1 = useRef(null);
   const gridRefHeader2 = useRef(null);
@@ -72,7 +73,9 @@ function HomeContent() {
   const projectVisible3 = useIntersectionObserver(gridRefProject3, slideDuration);
   const headerVisible1 = useIntersectionObserver(gridRefHeader1, slideDuration);
   const headerVisible2 = useIntersectionObserver(gridRefHeader2, slideDuration);
-
+  useEffect(() => {
+    setShowAbout(true);
+  }, []);
   // Resume Download
   const handleDownload = () => {
     const pdfPath = process.env.PUBLIC_URL + "/resume.pdf";
@@ -171,7 +174,7 @@ function HomeContent() {
           </Grid>
         </Grid>
         {/* About Me Box */}
-        <div id="about-box">
+        <div id="about-box" className={`${showAbout ? "bounce-from-below" : ""}`}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <div style={{ display: "flex", flexDirection: "column", width: "45%" }}>
               <Typography variant="h4" fontWeight="bold" color={"#00FF7F"} sx={{ ...aboutTypographyStyles }}>
