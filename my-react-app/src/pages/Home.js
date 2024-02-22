@@ -100,6 +100,7 @@ function HomeContent() {
     display: "flex",
     justifyContent: "center",
   };
+  const projectCardContentStyle = { backgroundColor: "#f8f9fa", height: "100%" };
   const bgLink =
     "https://png.pngtree.com/background/20211215/original/pngtree-binary-matrix-code-flow-dark-abstract-background-picture-image_1466835.jpg";
   return (
@@ -151,7 +152,7 @@ function HomeContent() {
               color="#00FF7F"
               sx={{ textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
             >
-              Nicholas Gandhi
+              Nicholas Peradidjaya
             </Typography>
             <Typography variant="h6" fontWeight="bold" sx={{ textAlign: "center" }}>
               Aspiring Software Engineer | Tech Enthusiast |{" "}
@@ -234,7 +235,7 @@ function HomeContent() {
                     height="200px"
                     link="https://github.com/Stygian84/OnlinePortfolio"
                   />
-                  <CardContent>
+                  <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
                       Personal Website
                     </Typography>
@@ -258,7 +259,7 @@ function HomeContent() {
                     link2="https://planttracker.netlify.app"
                     double={true}
                   />
-                  <CardContent>
+                  <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
                       Plant Tracker App
                     </Typography>
@@ -281,7 +282,7 @@ function HomeContent() {
                     link2="https://youtu.be/ikF48N-eQj0"
                     double={true}
                   />
-                  <CardContent>
+                  <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
                       Platformer Game
                     </Typography>
@@ -309,7 +310,7 @@ function HomeContent() {
                     height="200px"
                     link="https://github.com/bojx96/WePack4U"
                   />
-                  <CardContent>
+                  <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
                       Food Ordering App
                     </Typography>
@@ -329,7 +330,7 @@ function HomeContent() {
                     height="200px"
                     link="https://github.com/Stygian84/AimBotTest"
                   />
-                  <CardContent>
+                  <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
                       OpenCV Aim Bot
                     </Typography>
@@ -349,7 +350,7 @@ function HomeContent() {
                     height="200px"
                     link="http://asd.courses.sutd.edu.sg/dti-teams/project-part-4-14/"
                   />
-                  <CardContent>
+                  <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
                       SkyTunes
                     </Typography>
@@ -379,7 +380,7 @@ function HomeContent() {
                     height="200px"
                     link="https://github.com/Stygian84/FPGA-Group-14"
                   />
-                  <CardContent>
+                  <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
                       FPGA Arcade Game
                     </Typography>
@@ -399,7 +400,7 @@ function HomeContent() {
                     height="200px"
                     link="https://github.com/Stygian84/LoyaltyApp"
                   />
-                  <CardContent>
+                  <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
                       Loyalty App
                     </Typography>
