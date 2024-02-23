@@ -72,7 +72,7 @@ code {
   grid-template-columns: repeat(3, 1fr);
   gap: 5vh;
   margin: 5vh auto;
-  max-width: 80%;
+  width: 80vw;
   justify-items: center;
 }
 
@@ -283,5 +283,19 @@ code {
   }
   #projects > .MuiGrid-root {
     margin: 0 auto;
+  }
+  .tech-stack-row-container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    align-items: center;
+    justify-items: center;
+  }
+  .tech-stack-row-container2 {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    align-items: center;
+    justify-items: center;
   }
 }
