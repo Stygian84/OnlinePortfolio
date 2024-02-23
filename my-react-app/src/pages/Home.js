@@ -159,6 +159,7 @@ function HomeContent() {
               variant="h3"
               fontWeight="bold"
               color="#00FF7F"
+              textAlign={"center"}
               sx={{ textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
             >
               Nicholas Peradidjaya
