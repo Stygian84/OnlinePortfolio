@@ -65,7 +65,7 @@ function HomeContent() {
   const gridRef4 = useRef(null);
   const gridRef5 = useRef(null);
 
-  const slideDuration = 3000; // Adjust as needed
+  const slideDuration = 1000; // Adjust as needed
   const isVisible1 = useIntersectionObserver(gridRef1, slideDuration);
   const isVisible2 = useIntersectionObserver(gridRef2, slideDuration);
   const isVisible3 = useIntersectionObserver(gridRef3, slideDuration);
@@ -454,8 +454,6 @@ function HomeContent() {
               </Grid>
             </Grid>
           </div>
-          {/* Grid insert projects 1. this web 2. plant tracker app 3. opencv aim bot 4. unity platformer game 5. food
-            ordering app */}
         </div>
 
         {/* Tech Stacks */}
