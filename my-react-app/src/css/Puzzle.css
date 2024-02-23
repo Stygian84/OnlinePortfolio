@@ -48,3 +48,16 @@
   border-color: #4cd964 !important;
   scale: 1.1;
 }
+/* Puzzle.css */
+@keyframes rainbow {
+  0% { color: red; }
+  20% { color: orange; }
+  40% { color: yellow; }
+  60% { color: green; }
+  80% { color: blue; }
+  100% { color: violet; }
+}
+
+.rainbow-text {
+  animation: rainbow 3s infinite; /* Adjust animation duration as needed */
+}

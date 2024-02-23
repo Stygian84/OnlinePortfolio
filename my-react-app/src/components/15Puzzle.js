@@ -156,7 +156,7 @@ const Puzzle = () => {
     <div ref={miniGameRef} className={`app ${miniGameVisible ? "bounce-from-below" : ""}`}>
       <h1>15 Puzzle</h1>
       <div className="board">{renderBoard()}</div>
-      {solved && <div className="message">Congratulations! Puzzle Solved.</div>}
+      {solved && <div className="message rainbow-text">Congratulations! Puzzle Solved.</div>}
       <div className="stats">
         <div>
           <span style={{ fontWeight: "bold" }}>Moves:</span> {moves}
