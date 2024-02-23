@@ -11,6 +11,7 @@ import HoverableGithubOverlay from "../components/HoverableGithubOverlay";
 import { useIntersectionObserver } from "../components/useIntersectionObserver";
 import MatrixAnimation from "../components/Matrix";
 import BinaryAnimation from "../components/BinaryAnimation";
+import Puzzle from "../components/15Puzzle";
 
 function HomeTop() {
   const [showTop, setShowTop] = useState(false);
@@ -43,6 +44,7 @@ function HomeTop() {
         <div onClick={() => handleClick("projects")}>PROJECTS</div>
         <div onClick={() => handleClick("techstack")}>TECH STACK</div>
         <div onClick={() => handleClick("contact")}>CONTACT</div>
+        <div onClick={() => handleClick("minigame")}>MINI GAME</div>
       </Stack>
     </div>
   );
@@ -73,6 +75,7 @@ function HomeContent() {
   const projectVisible3 = useIntersectionObserver(gridRefProject3, slideDuration);
   const headerVisible1 = useIntersectionObserver(gridRefHeader1, slideDuration);
   const headerVisible2 = useIntersectionObserver(gridRefHeader2, slideDuration);
+
   useEffect(() => {
     setShowAbout(true);
   }, []);
@@ -510,6 +513,23 @@ function HomeContent() {
               <img src={require("../images/express.png")} alt="Logo" /> <Typography variant="h4">ExpressJS</Typography>
             </div>
           </div>
+        </div>
+
+        {/* Mini Game */}
+        <div>
+          <div ref={gridRefHeader2} id="minigame"></div>
+          <Divider sx={{ ...dividerStyles }} className={headerVisible2 ? "bounce-from-below" : ""}>
+            <Typography
+              marginBottom={"5vh"}
+              variant="h4"
+              fontWeight="bold"
+              color={"#00FF7F"}
+              sx={{ textShadow: "2px 2px 4px rgba(0, 255, 127, 0.5)" }}
+            >
+              Mini Game
+            </Typography>
+          </Divider>
+          <Puzzle />
         </div>
         <MatrixAnimation />
       </div>
