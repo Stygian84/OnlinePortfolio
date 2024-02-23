@@ -247,7 +247,7 @@ code {
 .change-opacity {
   animation: changeOpacity 2s ease forwards;
 }
-.zero-opacity{
+.zero-opacity {
   opacity: 0;
 }
 @keyframes changeOpacity {
