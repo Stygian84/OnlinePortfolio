@@ -262,7 +262,6 @@ code {
 @media only screen and (max-width: 600px) {
   .top > div {
     font-size: 0.5em;
-    margin: 0 2vw;
   }
   .icon-circle {
     top: 55vh;

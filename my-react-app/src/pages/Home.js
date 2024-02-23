@@ -35,7 +35,6 @@ function HomeTop() {
       <Stack
         direction="row"
         spacing={3}
-        divider={<Divider variant="middle" orientation="vertical" flexItem />}
         justifyContent="flex-end"
         alignItems="center"
         letterSpacing={"4px"}
