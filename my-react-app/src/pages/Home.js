@@ -1,5 +1,4 @@
 import { Grid, Stack, Card, CardContent, CardMedia, Typography } from "@mui/material";
-
 import React, { useRef, useState, useEffect } from "react";
 import "../index.css";
 import { Divider } from "@mui/material";
@@ -24,7 +23,8 @@ function HomeTop() {
   const handleClick = (targetID) => {
     const targetElement = document.getElementById(targetID);
     if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
+      // targetElement.scrollIntoView({ behavior: "smooth" });
+      targetElement.scrollIntoView();
     } else {
       console.error(`Element with ID '${targetID}' not found.`);
     }
