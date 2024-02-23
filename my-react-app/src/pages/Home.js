@@ -139,22 +139,6 @@ function HomeContent() {
             <div className="circle" style={{ backgroundImage: `url(${myPic})`, boxShadow: `0 0 1px 1px #00FF7F` }}>
               {" "}
             </div>
-            <a href="https://github.com/stygian84" target="_blank" rel="noopener noreferrer">
-              <div
-                className="icon-circle"
-                style={{ transform: "translateX(50%)", backgroundImage: `url(${github})`, backgroundColor: "black" }}
-              />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/nicholas-gandhi-peradidjaya/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div
-                className="icon-circle"
-                style={{ transform: "translateX(-150%)", backgroundImage: `url(${linkedin})` }}
-              />
-            </a>
             <Typography
               variant="h3"
               fontWeight="bold"
@@ -170,6 +154,29 @@ function HomeContent() {
             </Typography>
             <div className="resume-button" onClick={handleDownload}>
               Resume
+            </div>
+            <div style={{ display: "flex" }}>
+              <a href="https://github.com/stygian84" target="_blank" rel="noopener noreferrer">
+                <div
+                  className="icon-circle"
+                  style={{
+                    transform: "translateX(50%)",
+                    backgroundImage: `url(${github})`,
+                    backgroundColor: "black",
+                  }}
+                />
+              </a>
+              <div style={{ width: "15vw" }}> </div>
+              <a
+                href="https://www.linkedin.com/in/nicholas-gandhi-peradidjaya/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div
+                  className="icon-circle"
+                  style={{ transform: "translateX(-150%)", backgroundImage: `url(${linkedin})` }}
+                />
+              </a>
             </div>
           </Grid>
         </Grid>
