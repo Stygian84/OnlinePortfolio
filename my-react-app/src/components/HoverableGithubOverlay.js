@@ -5,7 +5,7 @@ import { CardMedia, Divider } from "@mui/material";
 const HoverableGithubOverlay = (props) => {
   const [isHovered, setIsHovered] = useState(false);
   const heightValue = parseInt(props.height, 10);
-  const adjustedHeight = isNaN(heightValue) ? "auto" : `${heightValue - 75}px`;
+  const adjustedHeight = isNaN(heightValue) ? "auto" : `${heightValue - 100}px`;
   const double = props.double;
   return (
     <div onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -26,12 +26,24 @@ const HoverableGithubOverlay = (props) => {
           }}
         >
           <a href={props.link} target="_blank" rel="noopener noreferrer">
-            <img className="enlarge-hover" height={adjustedHeight} src={require(`../images/${props.overlayimage}`)} alt="GitHub Logo" />
+            <img
+              className="enlarge-hover"
+              // height={adjustedHeight}
+              width="90vw"
+              src={require(`../images/${props.overlayimage}`)}
+              alt="GitHub Logo"
+            />
           </a>
           <Divider variant="middle" />
           {props.double && (
             <a href={props.link2} target="_blank" rel="noopener noreferrer">
-              <img className="enlarge-hover" height={adjustedHeight} src={require(`../images/${props.overlayimage2}`)} alt="GitHub Logo" />
+              <img
+                className="enlarge-hover"
+                // height={adjustedHeight}
+                width="90vw"
+                src={require(`../images/${props.overlayimage2}`)}
+                alt="GitHub Logo"
+              />
             </a>
           )}
         </div>
