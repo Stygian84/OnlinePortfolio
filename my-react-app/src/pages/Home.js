@@ -155,28 +155,28 @@ function HomeContent() {
             <div className="resume-button" onClick={handleDownload}>
               Resume
             </div>
-            <div style={{ display: "flex" }}>
-              <a href="https://github.com/stygian84" target="_blank" rel="noopener noreferrer">
-                <div
-                  className="icon-circle"
-                  style={{
-                    transform: "translateX(50%)",
-                    backgroundImage: `url(${github})`,
-                    backgroundColor: "black",
-                  }}
-                />
-              </a>
-              <div style={{ width: "15vw" }}> </div>
-              <a
-                href="https://www.linkedin.com/in/nicholas-gandhi-peradidjaya/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <div
-                  className="icon-circle"
-                  style={{ transform: "translateX(-150%)", backgroundImage: `url(${linkedin})` }}
-                />
-              </a>
+            <div id="icon-circle-container" style={{ display: "flex", marginTop: "5vh" }}>
+              <div
+                className="icon-circle"
+                style={{
+                  backgroundImage: `url(${github})`,
+                  backgroundColor: "black",
+                }}
+                onClick={() => {
+                  window.open("https://github.com/stygian84", "_blank");
+                }}
+              />
+              <div id="circle-separator" style={{ width: "10vw" }}>
+                {" "}
+              </div>
+
+              <div
+                className="icon-circle"
+                style={{ backgroundImage: `url(${linkedin})` }}
+                onClick={() => {
+                  window.open("https://www.linkedin.com/in/nicholas-gandhi-peradidjaya/", "_blank");
+                }}
+              />
             </div>
           </Grid>
         </Grid>

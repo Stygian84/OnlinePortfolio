@@ -4,12 +4,22 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family: "Montserrat";
+  font-family: "DM Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: whitesmoke;
   background: #020202;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "DM Sans", sans-serif !important;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
@@ -55,9 +65,6 @@ code {
   border-radius: 50%;
   background-color: white;
   background-size: cover;
-  top: 45vh;
-  left: 50%;
-  top: 50%;
 }
 .circle {
   position: relative;
@@ -263,8 +270,11 @@ code {
   .top > div {
     font-size: 0.5em;
   }
-  .icon-circle {
-    top: 55vh;
+  #black-overlay {
+    height: 60vh !important;
+  }
+  #binary-animation {
+    height: 60vh !important;
   }
   #about-box-child {
     display: flex;
