@@ -309,4 +309,7 @@ code {
     align-items: center;
     justify-items: center;
   }
+  #description-projects{
+    text-align: center;
+  }
 }

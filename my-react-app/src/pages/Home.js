@@ -244,6 +244,11 @@ function HomeContent() {
               Projects
             </Typography>
           </Divider>
+          <div id="description-projects" style={{ display: "flex", justifyContent: "center", marginBottom: "5vh", textAlign: "justify" }}>
+            <Typography variant="h6">
+              Hover over and click the projects' picture to view the GitHub source code / website.
+            </Typography>
+          </div>
 
           {/* Projects First Row */}
           <div ref={gridRefProject1} className={projectVisible1 ? "slide-in" : ""}>
@@ -327,7 +332,6 @@ function HomeContent() {
           </div>
 
           {/* Projects Second Row */}
-
           <div ref={gridRefProject2} className={projectVisible2 ? "slide-in-from-left" : ""}>
             <Grid
               container
