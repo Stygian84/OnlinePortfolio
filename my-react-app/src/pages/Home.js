@@ -52,6 +52,7 @@ function HomeTop() {
 
 function HomeContent() {
   const isSmallScreen = useMediaQuery("(max-width:600px)");
+  const isSmallHeight = useMediaQuery("(max-height:625px)");
   const [showAbout, setShowAbout] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const gridRefHeader1 = useRef(null);
@@ -116,7 +117,7 @@ function HomeContent() {
     display: "flex",
     justifyContent: "center",
   };
-  const projectCardContentStyle = { backgroundColor: "#f8f9fa", height: "100%" };
+  const projectCardContentStyle = { height: "100px", backgroundColor: "#f8f9fa", height: "100%" };
   return (
     // Title and Background Part
     <div id="content" className="content" style={{ position: "relative" }}>
@@ -244,7 +245,10 @@ function HomeContent() {
               Projects
             </Typography>
           </Divider>
-          <div id="description-projects" style={{ display: "flex", justifyContent: "center", marginBottom: "5vh", textAlign: "justify" }}>
+          <div
+            id="description-projects"
+            style={{ display: "flex", justifyContent: "center", marginBottom: "5vh", textAlign: "justify" }}
+          >
             <Typography variant="h6">
               Hover over and click the projects' picture to view the GitHub source code / website.
             </Typography>
@@ -261,7 +265,7 @@ function HomeContent() {
               marginBottom={"5vh"}
             >
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="web.png"
                     overlayimage="github.png"
@@ -282,7 +286,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="planttracker (1).jpg"
                     overlayimage="github.png"
@@ -305,7 +309,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="platformer.png"
                     overlayimage="github.png"
@@ -341,7 +345,7 @@ function HomeContent() {
               marginBottom={"10vh"}
             >
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="wepack4u.png"
                     overlayimage="github.png"
@@ -361,7 +365,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="aimbot.jpg"
                     overlayimage="github.png"
@@ -381,7 +385,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="skytunes.jpg"
                     overlayimage="website.png"
@@ -417,7 +421,7 @@ function HomeContent() {
               marginBottom={"10vh"}
             >
               <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="fpga.png"
                     overlayimage="github.png"
@@ -437,7 +441,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "50vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="githubprofile.png"
                     overlayimage="github.png"
