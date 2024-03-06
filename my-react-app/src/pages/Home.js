@@ -265,7 +265,7 @@ function HomeContent() {
               marginBottom={"5vh"}
             >
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="web.png"
                     overlayimage="github.png"
@@ -286,7 +286,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="planttracker (1).jpg"
                     overlayimage="github.png"
@@ -309,7 +309,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="platformer.png"
                     overlayimage="github.png"
@@ -345,7 +345,7 @@ function HomeContent() {
               marginBottom={"10vh"}
             >
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="wepack4u.png"
                     overlayimage="github.png"
@@ -365,7 +365,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="aimbot.jpg"
                     overlayimage="github.png"
@@ -385,7 +385,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="skytunes.jpg"
                     overlayimage="website.png"
@@ -421,7 +421,7 @@ function HomeContent() {
               marginBottom={"10vh"}
             >
               <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="fpga.png"
                     overlayimage="github.png"
@@ -435,13 +435,13 @@ function HomeContent() {
                     <Divider />
                     <Typography color="textSecondary">Lucid, Verilog, Python</Typography>
                     <Typography variant="body2" component="p">
-                      Wordle-inspired arcade game made using Alchitry.
+                      WORDLE-inspired arcade game made using Lucid programming language in Alchitry. 
                     </Typography>
                   </CardContent>
                 </Card>
               </Grid>
               <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "50vh", width: isSmallScreen ? "85vw" : "50vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "50vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="githubprofile.png"
                     overlayimage="github.png"
@@ -455,7 +455,7 @@ function HomeContent() {
                     <Divider />
                     <Typography color="textSecondary">Go, JS, CSS, SQL</Typography>
                     <Typography variant="body2" component="p">
-                      Collaborate with a team of 5 to create a loyalty web app.
+                      Collaborate with a team of 5 to create a loyalty web app that incorporates PostgreSQL Database and Unit testing.
                     </Typography>
                   </CardContent>
                 </Card>
