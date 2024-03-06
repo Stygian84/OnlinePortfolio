@@ -3,10 +3,10 @@ import "../css/Puzzle.css";
 import { useIntersectionObserver } from "./useIntersectionObserver";
 
 const BEST_TIME_KEY = "bestTime";
-const BOARD_SIZE = 4;
+const BOARD_SIZE = 5; // 5x5
 
 const generateBoard = () => {
-  let board = [];
+  let board;
   do {
     board = [];
     const numbers = Array.from({ length: BOARD_SIZE * BOARD_SIZE - 1 }, (_, index) => index + 1);
@@ -20,8 +20,28 @@ const generateBoard = () => {
       }
       board.push(row);
     }
-  } while (!isSolvable(board)); // Keep generating until a solvable board is found
+  } while (!isSolvable(board)); 
   return board;
+};
+
+const isSolvable = (board) => {
+  let inversions = 0;
+  const flatBoard = board.flat();
+
+  for (let i = 0; i < flatBoard.length - 1; i++) {
+    for (let j = i + 1; j < flatBoard.length; j++) {
+      if (flatBoard[i] && flatBoard[j] && flatBoard[i] > flatBoard[j]) {
+        inversions++;
+      }
+    }
+  }
+  const emptyRowIndex = Math.floor(flatBoard.indexOf(null) / BOARD_SIZE) + 1;
+  if (BOARD_SIZE % 2 === 1) {
+    return inversions % 2 === 0;
+  }
+  const adjustedEmptyRowIndex = BOARD_SIZE - emptyRowIndex + 1;
+  const totalInversionsAndEmptyRow = inversions + adjustedEmptyRowIndex;
+  return totalInversionsAndEmptyRow % 2 === 0;
 };
 
 const shuffleBoard = (board) => {
@@ -35,22 +55,6 @@ const shuffleBoard = (board) => {
     shuffledBoard.push(flatBoard.slice(i, i + BOARD_SIZE));
   }
   return shuffledBoard;
-};
-
-const isSolvable = (board) => {
-  let inversions = 0;
-  const flatBoard = board.flat();
-  for (let i = 0; i < flatBoard.length - 1; i++) {
-    for (let j = i + 1; j < flatBoard.length; j++) {
-      if (flatBoard[i] && flatBoard[j] && flatBoard[i] > flatBoard[j]) {
-        inversions++;
-      }
-    }
-  }
-  if (BOARD_SIZE % 2 === 0) {
-    inversions += board.findIndex((row) => row.includes(null)) / BOARD_SIZE;
-  }
-  return inversions % 2 === 0;
 };
 
 const Puzzle = () => {
@@ -100,7 +104,7 @@ const Puzzle = () => {
   };
 
   const handleClick = (row, col) => {
-    if (solved) return; // Prevent moves after puzzle is solved
+    if (solved) return;
     const emptyRow = board.findIndex((r) => r.includes(null));
     const emptyCol = board[emptyRow].indexOf(null);
     if ((row === emptyRow && Math.abs(col - emptyCol) === 1) || (col === emptyCol && Math.abs(row - emptyRow) === 1)) {
