@@ -292,8 +292,8 @@ function HomeContent() {
                     overlayimage="github.png"
                     overlayimage2="website.png"
                     height="200px"
-                    link="https://github.com/Stygian84/PlantTrackerApp"
-                    link2="https://planttracker.netlify.app"
+                    link="https://github.com/Stygian84/CapstoneWebApp.git"
+                    link2="https://agroreach.netlify.app"
                     double={true}
                   />
                   <CardContent style={{ ...projectCardContentStyle }}>
@@ -301,7 +301,7 @@ function HomeContent() {
                       Plant Tracker App
                     </Typography>
                     <Divider />
-                    <Typography color="textSecondary">React, ExpressJS, PostgreSQL, Python</Typography>
+                    <Typography color="textSecondary">React, ExpressJS, PostgreSQL, Firebase</Typography>
                     <Typography variant="body2" component="p">
                       Simple mobile web app to monitor the health of plants where the data are stored in a database.
                     </Typography>
