@@ -387,23 +387,19 @@ function HomeContent() {
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
                 <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
-                    image="skytunes.jpg"
-                    overlayimage="website.png"
+                    image="c.png"
+                    overlayimage="github.png"
                     height="200px"
-                    link="http://asd.courses.sutd.edu.sg/dti-teams/project-part-4-14/"
+                    link="https://github.com/fish-r/Python-To-C"
                   />
                   <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
-                      SkyTunes
+                      Python to C
                     </Typography>
                     <Divider />
-                    <Typography color="textSecondary">Python, RPi4, SolidWorks</Typography>
+                    <Typography color="textSecondary">C</Typography>
                     <Typography variant="body2" component="p">
-                      Interactive physical musical wall inspired from{" "}
-                      <a href="https://nooknet.net/tunes" target="_blank" rel="noopener noreferrer">
-                        Town Tunes
-                      </a>{" "}
-                      mini games from Animal Crossing.
+                      Create a tool designed to compile Python source code into equivalent C code.
                     </Typography>
                   </CardContent>
                 </Card>
@@ -420,7 +416,7 @@ function HomeContent() {
               justifyContent="center"
               marginBottom={"10vh"}
             >
-              <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
                 <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="fpga.png"
@@ -440,7 +436,8 @@ function HomeContent() {
                   </CardContent>
                 </Card>
               </Grid>
-              <Grid item xs={4} style={{ ...projectCardContainerStyless }}>
+
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
                 <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "50vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="githubprofile.png"
@@ -456,6 +453,31 @@ function HomeContent() {
                     <Typography color="textSecondary">Go, JS, CSS, SQL</Typography>
                     <Typography variant="body2" component="p">
                       Collaborate with a team of 5 to create a loyalty web app that incorporates PostgreSQL Database and Unit testing.
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+
+              <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
+                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                  <HoverableGithubOverlay
+                    image="skytunes.jpg"
+                    overlayimage="website.png"
+                    height="200px"
+                    link="http://asd.courses.sutd.edu.sg/dti-teams/project-part-4-14/"
+                  />
+                  <CardContent style={{ ...projectCardContentStyle }}>
+                    <Typography variant="h5" component="h2" fontWeight={"bold"}>
+                      SkyTunes
+                    </Typography>
+                    <Divider />
+                    <Typography color="textSecondary">Python, RPi4, SolidWorks</Typography>
+                    <Typography variant="body2" component="p">
+                      Interactive physical musical wall inspired from{" "}
+                      <a href="https://nooknet.net/tunes" target="_blank" rel="noopener noreferrer">
+                        Town Tunes
+                      </a>{" "}
+                      mini games from Animal Crossing.
                     </Typography>
                   </CardContent>
                 </Card>
