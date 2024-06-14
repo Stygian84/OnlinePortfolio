@@ -23,6 +23,7 @@ const HoverableGithubOverlay = (props) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+
           }}
         >
           <a href={props.link} target="_blank" rel="noopener noreferrer">

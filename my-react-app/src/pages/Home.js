@@ -461,23 +461,22 @@ function HomeContent() {
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
                 <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
-                    image="skytunes.jpg"
-                    overlayimage="website.png"
+                    image="bookswap.png"
+                    overlayimage="github.png"
+                    overlayimage2="website.png"
                     height="200px"
-                    link="http://asd.courses.sutd.edu.sg/dti-teams/project-part-4-14/"
+                    link="https://github.com/Stygian84/BookSwap/tree/master"
+                    link2="https://bookswap-123.netlify.app"
+                    double={true}
                   />
                   <CardContent style={{ ...projectCardContentStyle }}>
                     <Typography variant="h5" component="h2" fontWeight={"bold"}>
-                      SkyTunes
+                      BookSwap
                     </Typography>
                     <Divider />
-                    <Typography color="textSecondary">Python, RPi4, SolidWorks</Typography>
+                    <Typography color="textSecondary">ReactJS, Firebase</Typography>
                     <Typography variant="body2" component="p">
-                      Interactive physical musical wall inspired from{" "}
-                      <a href="https://nooknet.net/tunes" target="_blank" rel="noopener noreferrer">
-                        Town Tunes
-                      </a>{" "}
-                      mini games from Animal Crossing.
+                      Web application designed to facilitate the exchange or trading of books between users. This self-project was created under 24 hours, including the time to write documentation.
                     </Typography>
                   </CardContent>
                 </Card>
