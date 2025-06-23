@@ -6,6 +6,7 @@ import { ContactContent, ContactTop } from "./pages/Contact";
 import { HomeContent, HomeTop } from "./pages/Home";
 import { ProjectsContent, ProjectsTop } from "./pages/Projects";
 import { TechStackContent, TechStackTop } from "./pages/TechStack";
+import { YouTubeDLTop, YouTubeDLContent } from "./pages/YouTubeDL";
 import { Divider } from "@mui/material";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -38,6 +39,7 @@ function Top() {
       <Route path="/Projects" element={<ProjectsTop />} />
       <Route path="/TechStack" element={<TechStackTop />} />
       <Route path="/Contact" element={<ContactTop />} />
+      <Route path="/youtube-dl" element={<YouTubeDLTop />} />
     </Routes>
   );
 }
@@ -49,6 +51,7 @@ function Content() {
       <Route path="/Projects" element={<ProjectsContent />} />
       <Route path="/TechStack" element={<TechStackContent />} />
       <Route path="/Contact" element={<ContactContent />} />
+      <Route path="/youtube-dl" element={<YouTubeDLContent />} />
     </Routes>
   );
 }
