@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import { ContactContent, ContactTop } from "./pages/Contact";
 import { HomeContent, HomeTop } from "./pages/Home";
 import { ProjectsContent, ProjectsTop } from "./pages/Projects";
@@ -12,7 +12,7 @@ import { Divider } from "@mui/material";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <div id="wrapper" className="wrapper">
         <Top />
         <Divider
@@ -28,7 +28,7 @@ root.render(
         />
         <Content />
       </div>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
