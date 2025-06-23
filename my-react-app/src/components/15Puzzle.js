@@ -173,7 +173,7 @@ const Puzzle = () => {
           {bestTime === Infinity ? "00:00" : formatTime(bestTime)}
         </div>
       </div>
-      <div className="reset" onClick={handleReset}>
+      <div className="reset clickable" onClick={handleReset}>
         New Game
       </div>
     </div>

@@ -12,6 +12,7 @@ import MatrixAnimation from "../components/Matrix";
 import BinaryAnimation from "../components/BinaryAnimation";
 import Puzzle from "../components/15Puzzle";
 import { useMediaQuery } from "@mui/material";
+import { YouTubeDLContent } from "./YouTubeDL";
 
 function HomeTop() {
   const [showTop, setShowTop] = useState(false);
@@ -40,11 +41,11 @@ function HomeTop() {
         letterSpacing={"4px"}
         color="#00FF7F"
       >
-        <div onClick={() => handleClick("home")}>HOME</div>
-        <div onClick={() => handleClick("projects")}>PROJECTS</div>
-        <div onClick={() => handleClick("techstack")}>TECH STACK</div>
-        <div onClick={() => handleClick("contact")}>CONTACT</div>
-        <div onClick={() => handleClick("minigame")}>MINI GAME</div>
+        <div style={{ cursor: "pointer" }} onClick={() => handleClick("home")}>HOME</div>
+        <div style={{ cursor: "pointer" }} onClick={() => handleClick("projects")}>PROJECTS</div>
+        <div style={{ cursor: "pointer" }} onClick={() => handleClick("techstack")}>TECH STACK</div>
+        <div style={{ cursor: "pointer" }} onClick={() => handleClick("contact")}>CONTACT</div>
+        <div style={{ cursor: "pointer" }} onClick={() => handleClick("minigame")}>MINI GAME</div>
       </Stack>
     </div>
   );
@@ -153,12 +154,12 @@ function HomeContent() {
               Aspiring Software Engineer | Tech Enthusiast |{" "}
               <span style={{ whiteSpace: "nowrap" }}>Web App Developer</span>
             </Typography>
-            <div className="resume-button" onClick={handleDownload}>
+            <div className="resume-button clickable" onClick={handleDownload}>
               Resume
             </div>
             <div id="icon-circle-container" style={{ display: "flex", marginTop: "5vh" }}>
               <div
-                className="icon-circle"
+                className="clickable icon-circle"
                 style={{
                   backgroundImage: `url(${github})`,
                   backgroundColor: "black",
@@ -172,7 +173,7 @@ function HomeContent() {
               </div>
 
               <div
-                className="icon-circle"
+                className="clickable icon-circle"
                 style={{ backgroundImage: `url(${linkedin})` }}
                 onClick={() => {
                   window.open("https://www.linkedin.com/in/nicholas-gandhi-peradidjaya/", "_blank");
@@ -265,7 +266,7 @@ function HomeContent() {
               marginBottom={"5vh"}
             >
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="web.png"
                     overlayimage="github.png"
@@ -286,7 +287,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="planttracker (1).jpg"
                     overlayimage="github.png"
@@ -309,7 +310,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="platformer.png"
                     overlayimage="github.png"
@@ -345,7 +346,7 @@ function HomeContent() {
               marginBottom={"10vh"}
             >
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="wepack4u.png"
                     overlayimage="github.png"
@@ -365,7 +366,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="aimbot.jpg"
                     overlayimage="github.png"
@@ -385,7 +386,7 @@ function HomeContent() {
                 </Card>
               </Grid>
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="c.png"
                     overlayimage="github.png"
@@ -417,7 +418,7 @@ function HomeContent() {
               marginBottom={"10vh"}
             >
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="fpga.png"
                     overlayimage="github.png"
@@ -431,14 +432,14 @@ function HomeContent() {
                     <Divider />
                     <Typography color="textSecondary">Lucid, Verilog, Python</Typography>
                     <Typography variant="body2" component="p">
-                      WORDLE-inspired arcade game made using Lucid programming language in Alchitry. 
+                      WORDLE-inspired arcade game made using Lucid programming language in Alchitry.
                     </Typography>
                   </CardContent>
                 </Card>
               </Grid>
 
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "50vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "50vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="githubprofile.png"
                     overlayimage="github.png"
@@ -459,7 +460,7 @@ function HomeContent() {
               </Grid>
 
               <Grid item xs={3} style={{ ...projectCardContainerStyless }}>
-                <Card sx={{ height: isSmallHeight ? "60vh": "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
+                <Card sx={{ height: isSmallHeight ? "60vh" : "57.5vh", width: isSmallScreen ? "85vw" : "30vw", position: "relative" }}>
                   <HoverableGithubOverlay
                     image="bookswap.png"
                     overlayimage="github.png"
@@ -585,6 +586,14 @@ function HomeContent() {
             </Typography>
           </Divider>
           <Puzzle />
+        </div>
+
+        {/* Mini Game */}
+        <div>
+          <div ref={gridRefHeader2} id="youtube"></div>
+          <Divider sx={{ ...dividerStyles }} className={headerVisible2 ? "bounce-from-below" : ""}>
+            <YouTubeDLContent />
+          </Divider>
         </div>
         <MatrixAnimation />
       </div>

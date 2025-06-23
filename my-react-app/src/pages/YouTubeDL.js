@@ -78,7 +78,7 @@ export function YouTubeDLContent() {
                     onChange={(e) => setUrl(e.target.value)}
                     style={{ width: "60%", marginRight: "1rem" }}
                 />
-                <button type="submit">Download</button>
+                <button type="submit" className="clickable">Download</button>
             </form>
 
             {status && <p>Status: {status}</p>}
@@ -101,7 +101,7 @@ export function YouTubeDLContent() {
 
             {downloadReady && (
                 <a href={`${RENDER_BASE_URL}/file`} download>
-                    <button style={{ marginTop: "1rem" }}>Download Video</button>
+                    <button className="clickable" style={{ marginTop: "1rem" }}>Download Video</button>
                 </a>
             )}
         </div>
