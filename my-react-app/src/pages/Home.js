@@ -588,7 +588,7 @@ function HomeContent() {
           <Puzzle />
         </div>
 
-        {/* Mini Game */}
+        {/* Youtube */}
         <div>
           <div ref={gridRefHeader2} id="youtube"></div>
           <Divider sx={{ ...dividerStyles }} className={headerVisible2 ? "bounce-from-below" : ""}>
