@@ -358,3 +358,7 @@ code {
 .clickable {
   cursor: pointer;
 }
+
+.cursor-default {
+  cursor: default;
+}

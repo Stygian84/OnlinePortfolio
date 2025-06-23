@@ -591,6 +591,7 @@ function HomeContent() {
         {/* Youtube */}
         <div>
           <div ref={gridRefHeader2} id="youtube"></div>
+          <div></div>
           <Divider sx={{ ...dividerStyles }} className={headerVisible2 ? "bounce-from-below" : ""}>
             <YouTubeDLContent />
           </Divider>
