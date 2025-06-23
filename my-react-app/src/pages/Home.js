@@ -572,7 +572,7 @@ function HomeContent() {
         </div>
 
         {/* Mini Game */}
-        {/* <div>
+        <div>
           <div ref={gridRefHeader2} id="minigame"></div>
           <Divider sx={{ ...dividerStyles }} className={headerVisible2 ? "bounce-from-below" : ""}>
             <Typography
@@ -586,7 +586,7 @@ function HomeContent() {
             </Typography>
           </Divider>
           <Puzzle />
-        </div> */}
+        </div>
 
         {/* Youtube */}
         <div>
